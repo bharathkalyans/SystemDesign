@@ -1,12 +1,7 @@
-/*
+package snakeandladder;/*
  * Credit goes to below channel
  * https://www.youtube.com/channel/UCQSU2g8XU-ZSs26_4HGuCWg
  * */
-
-import snakeandladder.Dice;
-import snakeandladder.GameBoard;
-import snakeandladder.Jumper;
-import snakeandladder.Player;
 
 import java.util.*;
 
