@@ -6,10 +6,10 @@ import java.util.Queue;
 
 public class GameBoard {
 
-    private Dice dice;
-    private Queue<Player> nextTurn;
-    private List<Jumper> snakes;
-    private List<Jumper> ladders;
+    private final Dice dice;
+    private final Queue<Player> nextTurn;
+    private final List<Jumper> snakes;
+    private final List<Jumper> ladders;
     HashMap<String, Integer> playerCurrentPosition;
     int boardSize;
 
@@ -50,7 +50,7 @@ public class GameBoard {
                     }
                 });
                 if (nextPosition[0] != nextCell)
-                    System.out.println(player.getPlayerName() + " was bitten by a Snake.🥲 and dropped to position : " + nextPosition[0]);
+                    System.out.println(player.getPlayerName() + " was bit by a Snake 🥲😭 and dropped to position : " + nextPosition[0]);
 
                 ladders.forEach(v -> {
                     if (v.getEndPoint() == nextCell) {
