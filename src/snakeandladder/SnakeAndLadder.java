@@ -8,18 +8,27 @@ import java.util.*;
 public class SnakeAndLadder {
 
     public static void main(String[] args) {
-        Dice dice = new Dice(1);
 
-        Player bharath = new Player("Bharath", 1);
-        Player ananth = new Player("Ananth", 2);
+        int numberOfPLayers;
+        Dice dice;
         Queue<Player> players = new LinkedList<>();
-        players.add(bharath);
-        players.add(ananth);
-
         HashMap<String, Integer> playerPositions = new HashMap<>();
-        playerPositions.put(bharath.getPlayerName(), 0);
-        playerPositions.put(ananth.getPlayerName(), 0);
+        Scanner sc = new Scanner(System.in);
 
+        System.out.println("Enter number of players : ");
+        numberOfPLayers = sc.nextInt();
+
+        System.out.println("Enter player names :: ");
+        for (int i = 1; i <= numberOfPLayers; i++) {
+            String name = sc.next();
+            Player player = new Player(name, i);
+            players.add(player);
+            playerPositions.put(name, 0);
+        }
+
+        System.out.println("Enter number of dies to be used : ");
+        int numberOfDies = sc.nextInt();
+        dice = new Dice(numberOfDies);
 
         List<Jumper> snakes = new ArrayList<>();
         Jumper snake1 = new Jumper(10, 2);
